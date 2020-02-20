@@ -53,3 +53,5 @@ int main(void){
     }
     return 0;
 }
+
+/* revised from https://jaimemin.tistory.com/824 */
