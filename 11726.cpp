@@ -18,7 +18,8 @@ int main() {
     }
         
     cout << d[n] << endl;
-}
 
+    return 0;
+}
 
 /* revised from https://suriisurii.tistory.com/38 */
