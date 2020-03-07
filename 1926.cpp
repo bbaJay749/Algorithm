@@ -31,7 +31,7 @@ int main() {
     cin >> size_v >> size_h;
 
     /* int** drawings = new int* [size_v];
-    for (int i = 0; i < size_h; i++) {
+    for (int i = 0; i < size_; i++) {
         drawings[i] = new int[size_h];
     } */
     
