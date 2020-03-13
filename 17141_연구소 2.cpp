@@ -2,6 +2,7 @@
 #include <vector>
 #include <queue>
 #include <string>
+#include <cstring>
 using namespace std;
 
 struct Pos {
@@ -79,7 +80,7 @@ int spread(int N, int M, int count, int** lab, vector<Pos> v) { // time consumpt
 	bool** visit = new bool* [N];	// check visit 
 	for (int i = 0; i < N; i++) {
 		visit[i] = new bool[N];
-		memset(visit[i], false, sizeof(bool) * N);
+		memset(visit[i],false,sizeof(bool)*N);
 	}
 
 	queue<Pos> q; // queue for BFS
