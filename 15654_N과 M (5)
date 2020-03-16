@@ -40,3 +40,5 @@ int main() {
 
     return 0;
 }
+
+/* revised from https://jdselectron.tistory.com/26  */
