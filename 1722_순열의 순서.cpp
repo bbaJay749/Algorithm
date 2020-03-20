@@ -48,7 +48,7 @@ void getpermut(ull fac[], int N) {
 	while (p >= 0) {
 		int div = k / fac[p];
 		ans.push_back(initial[div]);
-		initial.erase(initial.begin() + div); //벡터지우기
+		initial.erase(initial.begin() + div); // erase checked vector 
 		k = k % fac[p];
 		--p;
 	}
@@ -72,7 +72,7 @@ void getorder(ull fac[], int N) {
 	for (int i = 1; i <= N; i++) {
 		int cnt = 0;
 		for (int k = 1; k <= i; k++) {
-			if (permut[i] > permut[k]) cnt++;
+			if (permut[i] > permut[k]) cnt++;	// count all the nums smaller than current
 		}
 		order += (ull(permut[i]) - 1 - cnt) * fac[N - i];
 	}
