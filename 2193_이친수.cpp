@@ -59,12 +59,12 @@ int main() {
                     flag = 1;
                 }
             }
-            /*if (flag == 1) {
+            if (flag == 1) {
                 if (Pinary[i][k] == 1 && Pinary[i][k - 1] == 1) {
                     totalnum++;
                     break;
                 }
-            }*/
+            }
         }
     }
 
