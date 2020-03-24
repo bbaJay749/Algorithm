@@ -1,4 +1,4 @@
-/* Dumb way cannot beat the time limit*/
+/* Dumb way cannot beat the time limit 
 
 #include <cstdio>
 #include <iostream>
@@ -75,3 +75,5 @@ bool check(vector<int> children, int N) {
 
 	return checker;
 }
+
+*/
