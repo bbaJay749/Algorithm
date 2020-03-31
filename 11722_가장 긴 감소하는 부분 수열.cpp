@@ -14,8 +14,8 @@ int main() {
 	}
 
 	int max = 1;
-
 	vector<int> LDS(N, 0);
+	
 	LDS[0] = 1;
 	for (int i = 0; i < N; i++) {
 		LDS[i] = 1;
@@ -24,10 +24,7 @@ int main() {
 				LDS[i]++;
 			}
 		}
-
-		if (max < LDS[i]) {
-			max = LDS[i];
-		}
+		if (max < LDS[i]) max = LDS[i];
 	}
 
 	cout << max;
