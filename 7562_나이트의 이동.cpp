@@ -5,8 +5,7 @@ using namespace std;
 
 int BFS(int sx, int sy, int dx, int dy, int I, vector<vector<bool> > visited);
 
-struct pos
-{
+struct pos {
 	int x;
 	int y;
 	int step;
@@ -20,8 +19,7 @@ int main(void)
 	int N = 0;
 	cin >> N;
 
-	for (int i = 1; i <= N; i++)
-	{
+	for (int i = 1; i <= N; i++) {
 		int I = 0;
 		int sx = 0, sy = 0, dx = 0, dy = 0;
 		cin >> I >> sx >> sy >> dx >> dy;
@@ -30,6 +28,8 @@ int main(void)
 
 		cout << BFS(sx, sy, dx, dy, I, visited) << endl;
 	}
+	
+	return 0;
 }
 
 int BFS(int sx, int sy, int dx, int dy, int I, vector<vector<bool> > visited) {
@@ -38,8 +38,7 @@ int BFS(int sx, int sy, int dx, int dy, int I, vector<vector<bool> > visited) {
 	q.push({ sx,sy,0 });
 	visited[sx][sy] = true;
 
-	while (!q.empty())
-	{
+	while (!q.empty()) {
 		int now_x = q.front().x;
 		int now_y = q.front().y;
 		int step = q.front().step;
