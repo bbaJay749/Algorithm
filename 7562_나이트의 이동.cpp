@@ -14,8 +14,7 @@ struct pos {
 int move_x[8] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 int move_y[8] = { 2, 1, -1, -2, -2, -1, 1, 2 };
 
-int main(void)
-{
+int main() {
 	int N = 0;
 	cin >> N;
 
