@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-long long a[6][6], ans[6][6], c[6][6], n, b;
+long long a[6][6], ans[6][6], n, b;
 void cal(long long A[6][6], long long B[6][6]);
 
 int main() {
@@ -31,19 +31,21 @@ int main() {
 }
 
 void cal(long long A[6][6], long long B[6][6]){
+	long long C[6][6];
+
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
-			c[i][j] = 0;
+			C[i][j] = 0;
 			for (int k = 1; k <= n; k++) {
-				c[i][j] += A[i][k] * B[k][j];
+				C[i][j] += A[i][k] * B[k][j];
 			}
-			c[i][j] %= 1000;
+			C[i][j] %= 1000;
 		}
 	}
 		
 	for (int i = 1; i <= n; i++) {
 		for (int j = 1; j <= n; j++) {
-			A[i][j] = c[i][j];
+			A[i][j] = C[i][j];
 		}
 	}
 }
