@@ -30,7 +30,8 @@ int main() {
 	}
     
 	Pos origin = { N, N };
-    plain[origin.x][origin.y] = 1;
+    	plain[origin.x][origin.y] = 1;
+	
 	calPS(plain, origin, EWSN, 2 * N, N, 1);
 
 	cout << fixed;
