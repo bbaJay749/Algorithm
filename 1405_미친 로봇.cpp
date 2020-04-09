@@ -48,32 +48,32 @@ void calPS(bool **plain, Pos loc, EWSN EWSN, int N, int count, double temp_possi
 
 	if (temp_possiblity != 0) {
 		if (loc.x < N && plain[loc.x + 1][loc.y] == 0) {   // E
-            plain[loc.x + 1][loc.y] = 1;
+            		plain[loc.x + 1][loc.y] = 1;
 			loc.x++;
 			calPS(plain, loc, EWSN, N, count - 1, temp_possiblity * EWSN.PE);
 			loc.x--;
-            plain[loc.x + 1][loc.y] = 0;
+            		plain[loc.x + 1][loc.y] = 0;
 		}
 		if (loc.x > 0 && plain[loc.x - 1][loc.y] == 0) {   // W
-            plain[loc.x - 1][loc.y] = 1;
+            		plain[loc.x - 1][loc.y] = 1;
 			loc.x--;
 			calPS(plain, loc, EWSN, N, count - 1, temp_possiblity * EWSN.PW);
 			loc.x++;
-            plain[loc.x - 1][loc.y] = 0;
+            		plain[loc.x - 1][loc.y] = 0;
 		}
 		if (loc.y > 0 && plain[loc.x][loc.y - 1] == 0) {   // S
-            plain[loc.x][loc.y - 1] = 1;
+            		plain[loc.x][loc.y - 1] = 1;
 			loc.y--;
 			calPS(plain, loc, EWSN, N, count - 1, temp_possiblity * EWSN.PS);
 			loc.y++;
-            plain[loc.x][loc.y - 1] = 0;
+            		plain[loc.x][loc.y - 1] = 0;
 		}
-		if (loc.y < N && plain[loc.x][loc.y + 1] == 0) {   // N
-            plain[loc.x][loc.y + 1] = 1;
+	 	if (loc.y < N && plain[loc.x][loc.y + 1] == 0) {   // N
+     	  	        plain[loc.x][loc.y + 1] = 1;
 			loc.y++;
 			calPS(plain, loc, EWSN, N, count - 1, temp_possiblity * EWSN.PN);
 			loc.y--;
-            plain[loc.x][loc.y + 1] = 0;
+            		plain[loc.x][loc.y + 1] = 0;
 		}
 	}
 }
