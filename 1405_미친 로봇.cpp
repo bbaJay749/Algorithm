@@ -1,4 +1,4 @@
-/*  Backtracking should be check before call the func */
+/*  Should check before call the func */
 
 #include <iostream>
 #include <vector>
