@@ -1,4 +1,4 @@
-/* BFS should be check before call the func */
+/*  Backtracking should be check before call the func */
 
 #include <iostream>
 #include <vector>
