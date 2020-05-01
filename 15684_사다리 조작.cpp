@@ -59,3 +59,6 @@ void brute_force(int cnt, int x, int y) {
 		}
 	}
 }
+
+
+/* revised from https://rebas.kr/790 */
