@@ -14,7 +14,7 @@ vector<pair<int, int> > house;
 set<vector<int> > choice_chicken;
 vector<int> temp_perm;
 
-void dfs(int cnt, int t, vector<bool> visit, int choice_num) {
+void dfs(int cnt, int t, int choice_num) {
     if (cnt == choice_num) {
         // to get rid of the redundant permutations
         vector<int> q = temp_perm;
@@ -24,13 +24,9 @@ void dfs(int cnt, int t, vector<bool> visit, int choice_num) {
     }
 
     for (int j = t; j < chicken.size(); j++) {
-        if (!visit[j]) {
-            temp_perm.push_back(j);
-            visit[j] = true;
-            dfs(cnt + 1, t + 1, visit, choice_num);
-            visit[j] = false;
-            temp_perm.pop_back();
-        }
+        temp_perm.push_back(j);
+        dfs(cnt + 1, j + 1, choice_num);
+        temp_perm.pop_back();
     }
 }
 
@@ -47,7 +43,7 @@ int main(void) {
             cin >> a;
 
             if (a == 1) house.push_back({ i, j });
-            else if (a == 2) chicken.push_back({ i, j });  
+            else if (a == 2) chicken.push_back({ i, j });
         }
     }
 
@@ -62,8 +58,7 @@ int main(void) {
     }
 
     // choose chicken places to shut down
-    vector<bool> visit(chicken_num, false);
-    dfs(0, 0, visit, chicken_num - M);
+    dfs(0, 0, chicken_num - M);
 
     int result = INF;
     int choice_chicken_case = choice_chicken.size();
@@ -73,7 +68,7 @@ int main(void) {
         vector<int> a = *itr;
         int temp_result = 0;
         vector<vector<int> > temp_dis = distance;
-        
+
         // make distance to INF between houses and the chicken place shut down
         for (int j = 0; j < a.size(); j++) {
             int chick = a[j];
