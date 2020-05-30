@@ -14,6 +14,7 @@ int bfs(vector<vector<vector<char> > > building) {
 	vector<vector<vector<bool> > > visit(L, vector<vector<bool> >(R, vector<bool>(C, false)));
 	queue<Pos> porBFS; 
 	porBFS.push(S);
+	visit[S.x][S.y][S.z] = true;
 
 	while (!porBFS.empty()) {
 		Pos current = porBFS.front();
