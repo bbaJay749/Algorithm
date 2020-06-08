@@ -17,6 +17,7 @@ int main() {
 		buildings.push_back(temp);
 	}
 
+	/* bad hair day */
 	for (int i = 0; i < N; i++) {
 		while (!por_count.empty() && por_count.top() <= buildings[i]) {
 			por_count.pop();
