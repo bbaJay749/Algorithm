@@ -1,25 +1,41 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
-int main() {
-	int N;
+int N, h;
+stack<pair<int, int> > stock_span;
+vector<int> answer;
+
+int main() 
+{
 	cin >> N;
 
-	vector<int> top(N, 0);
+	/*	1. get the index and heights 
+		2. pop til the stack is empty or the top > h
+			- if stack is empty, there's no tower possible
+			- if stack's top > h, that's the tower fits
+		3. push {index, h} into the stack */
+
 	for (int i = 0; i < N; i++) {
-		cin >> top[i];
+		cin >> h;
+
+		while (!stock_span.empty() && stock_span.top().second < h) {
+			stock_span.pop();
+		}
+
+		if (stock_span.empty()) {
+			answer.push_back(0);
+		}
+		else {
+			answer.push_back(stock_span.top().first + 1);
+		}
+
+		stock_span.push({ i, h });
 	}
 
 	for (int i = 0; i < N; i++) {
-		int receive = 0; 
-		for (int j = i - 1; j >= 0; j--) {
-			if (top[i] < top[j]) { 
-				receive = j + 1;
-				break;
-			}
-		}
-		cout << receive << " ";
+		cout << answer[i] << " ";
 	}
 
 	return 0;
