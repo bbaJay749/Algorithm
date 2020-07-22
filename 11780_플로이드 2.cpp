@@ -16,7 +16,7 @@ int main() {
 	int a, b, c;
 	for (int i = 1; i <= m; i++) {
 		cin >> a >> b >> c;
-		cost[a][b] = min(cost[a][b], c);
+		cost[a][b] = min(cost[a][b], c);	// INF로 초기화되어있어 정보가 주어지는지 점검 필요
 	}
 	for (int i = 1; i <= n; i++) {
 		cost[i][i] = 0;
