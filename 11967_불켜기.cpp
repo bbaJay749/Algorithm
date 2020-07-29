@@ -45,7 +45,7 @@ void bfs(vector<vector<queue<pair<int, int> > > > barn, vector<vector<bool> > li
 			}
 		}
 
-		if (!flag) break;	// if no swithc has turned on
+		if (!flag) break;	// if no switch has turned on
 
 		/* get current loctaion */
 		pair<int, int> temp_loc = BFS_move.front();
