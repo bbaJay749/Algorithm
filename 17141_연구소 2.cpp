@@ -39,7 +39,7 @@ int main() {
 	vector<Pos> v;
 	int t = putVirus(N, M, 0, count, 10000000, lab, loc_virus, v);
 
-	if (t == 10000000) { // if t is still 10000000, that means virus can conquer the lab
+	if (t == 10000000) { // if t is still 10000000, that means virus can't conquer the lab
 		cout << -1;
 	}
 	else {
