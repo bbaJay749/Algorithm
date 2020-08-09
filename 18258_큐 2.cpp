@@ -18,36 +18,22 @@ void push(int x) {
 }
 
 void get_empty() {
-	if (size_queue == 0) {
-		cout << 1 << "\n";
-	}
-	else {
-		cout << 0 << "\n";
-	}
+	if (size_queue == 0) cout << 1 << "\n";
+	else cout << 0 << "\n";
 }
 
 void front() {
-	if (size_queue == 0) {
-		cout << - 1 << "\n";
-	}
-	else {
-		cout << por_queue[front_queue] << "\n";
-	}
+	if (size_queue == 0) cout << -1 << "\n";
+	else cout << por_queue[front_queue] << "\n";
 }
 
 void back() {
-	if (size_queue == 0) {
-		cout << -1 << "\n";
-	}
-	else {
-		cout << por_queue[rear_queue - 1] << "\n";
-	}
+	if (size_queue == 0) cout << -1 << "\n";
+	else cout << por_queue[rear_queue - 1] << "\n";
 }
 
 void pop() {
-	if (size_queue == 0) {
-		cout << -1 << "\n";
-	}
+	if (size_queue == 0) cout << -1 << "\n";
 	else {
 		cout << por_queue[front_queue] << "\n";
 		por_queue[front_queue] = 0;
@@ -70,23 +56,12 @@ int main() {
 			cin >> number;
 			push(number);
 		}
-		else if (order_queue == "front") {
-			front();
-		}
-		else if (order_queue == "back") {
-			back();
-		}
-		else if (order_queue == "size") {
-			get_size();
-		}
-		else if (order_queue == "empty") {
-			get_empty();
-		}
-		else if (order_queue == "pop") {
-			pop();
-		}
+		else if (order_queue == "front") front();
+		else if (order_queue == "back") back();
+		else if (order_queue == "size") get_size();
+		else if (order_queue == "empty") get_empty();
+		else if (order_queue == "pop") pop();
 	}
 
 	return 0;
 }
-
