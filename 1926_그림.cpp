@@ -3,10 +3,10 @@
 #include <string>
 using namespace std;
 
-int size_v = 0, size_h = 0;
-int num_drawings = 0;
-int size_drawing = 0, L_size_drawing = 0;
-bool flag = 0;
+int size_v, size_h;
+int num_drawings;
+int size_drawing, L_size_drawing;
+bool flag, dot;
 
 void getdrawing(bool drawings[501][501], bool checker[501][501], int i, int j) {
     if (!checker[i][j]) {
@@ -26,16 +26,13 @@ void getdrawing(bool drawings[501][501], bool checker[501][501], int i, int j) {
 }
 
 int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    
     bool drawings[501][501] = { 0 };
     bool checker[501][501] = { 0 };
     cin >> size_v >> size_h;
 
-    /* int** drawings = new int* [size_v];
-    for (int i = 0; i < size_; i++) {
-        drawings[i] = new int[size_h];
-    } */
-    
-    bool dot;
     for (int i = 0; i < size_v; i++) {
         for (int j = 0; j < size_h; j++) {
             cin >> dot;
