@@ -7,13 +7,14 @@ using namespace std;
 
 int M, N, K;
 int A, B, C, D;
+int q, w, e, r;
 queue<pair<int, int> > parabfs;
 pair<int, int> temp_pair;
 vector<pair<int, int> > dir = { {-1, 0}, {1, 0}, {0, 1}, {0, -1} };
 vector<int> area_size;
 
 void bfs(vector<vector<bool> > map, vector<vector<bool> > visit) {
-	
+
 	for (int a = 0; a < M; a++) {
 		for (int b = 0; b < N; b++) {
 			if (!visit[a][b] && !map[a][b]) {
@@ -27,10 +28,16 @@ void bfs(vector<vector<bool> > map, vector<vector<bool> > visit) {
 					parabfs.pop();
 
 					for (int i = 0; i < 4; i++) {
-						if (temp_pair.first + dir[i].first >= 0 && temp_pair.first + dir[i].first < M && temp_pair.second + dir[i].second >= 0 && temp_pair.second + dir[i].second < N) {
-							if (!visit[temp_pair.first + dir[i].first][temp_pair.second + dir[i].second] && !map[temp_pair.first + dir[i].first][temp_pair.second + dir[i].second]) {
-								parabfs.push({ temp_pair.first + dir[i].first, temp_pair.second + dir[i].second });
-								visit[temp_pair.first + dir[i].first][temp_pair.second + dir[i].second] = true;
+
+						q = temp_pair.first;
+						w = temp_pair.second;
+						e = dir[i].first;
+						r = dir[i].second;
+
+						if (q + e >= 0 && q + e < M && w + r >= 0 && w + r < N) {
+							if (!visit[q + e][w + r] && !map[q + e][w + r]) {
+								parabfs.push({ q + e, w + r });
+								visit[q + e][w + r] = true;
 								count += 1;
 							}
 						}
@@ -42,15 +49,15 @@ void bfs(vector<vector<bool> > map, vector<vector<bool> > visit) {
 	}
 }
 
-
 int main()
 {
 	cin >> M >> N >> K;
 	vector<vector<bool> > map(M, vector<bool>(N, false));
 	vector<vector<bool> > visit(M, vector<bool>(N, false));
 
+	/* check all the not-interested area */
 	for (int a = 0; a < K; a++) {
-		cin >> A >> B >> C >> D; 
+		cin >> A >> B >> C >> D;
 		int temp = 0;
 		for (int i = A; i < C; i++) {
 			for (int j = B; j < D; j++) {
