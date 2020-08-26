@@ -29,7 +29,7 @@ void cal() {
 			cur_node = students[cur_node];
 		}
 
-		/*	if origin and destin. same after scan cycle, find where does the cycle starts.
+		/*	if origin and destin. same after scan cycle, find where the cycle starts.
 			if it's not the node which starts cycle, put -1 to mark it's not groupable */
 		int visited_size = visited_node.size();
 		for (int j = 0; j < visited_size; j++) {
