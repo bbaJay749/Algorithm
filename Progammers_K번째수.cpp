@@ -21,6 +21,7 @@ vector<int> solution(vector<int> array, vector<vector<int>> commands)
         
         /* sort in acsending order */
         sort(temp_sort.begin(), temp_sort.end(), less<int>());
+ 
         /* get commands[i][2]th element */
         answer.push_back(temp_sort[commands[i][2] - 1]);
     }
