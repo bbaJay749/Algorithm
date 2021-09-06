@@ -19,7 +19,7 @@ void dfs(int index, int tempVol) {
        (0, 5) -> (1, 6) -> (2, 7)
                         -> (2, 5) 
               -> (1, 4) -> (2, 5) then this case doesn't even need to be calculated 
-                        -> (2, 3) this case need to be calculateds
+                        -> (2, 3) this case need to be calculated
     */
     if (dp[index][tempVol]) {
         return;
