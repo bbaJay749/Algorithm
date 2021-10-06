@@ -30,7 +30,7 @@ int main() {
 		boom_flag = false;
 		for (int i = 0; i < 12; i++) {
 			for (int j = 0; j < 6; j++) {
-				/* find every bunches which are biggger than 4 and pop them */
+				/* find every bunches which are bigger than 4 and pop them */
 
 				if (visit[i][j] == false && puyopuyo[i][j] != '.') {
 					visit[i][j] = true;
