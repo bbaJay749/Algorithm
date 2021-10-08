@@ -29,3 +29,5 @@ for i in range(n):
             result += 1
 
 print(result)
+
+# from https://github.com/ndb796/python-for-coding-test/blob/master/5/10.py
