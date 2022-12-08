@@ -1,4 +1,5 @@
 class Solution:
+
     def romanToInt(self, s: str) -> int:
         last_char = ''
         sum = 0
@@ -30,6 +31,7 @@ class Solution:
             last_char = _char
 
         return sum
+
 
 ''' much better way
 
