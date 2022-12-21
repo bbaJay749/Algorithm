@@ -5,6 +5,7 @@ class Solution:
     """
     Kadane's Algorithm, Largest Sum Contiguous Subarray, LSCS
     https://siahn95.tistory.com/entry/AlgorithmLeetCodeEasyPython-53-Maximum-Subarray
+    https://dndi117.tistory.com/31
     """
 
     def maxSubArray(self, nums: List[int]) -> int:
