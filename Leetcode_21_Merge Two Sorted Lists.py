@@ -2,6 +2,7 @@ from collections import deque
 
 
 class Solution:
+
     def isValid(self, s: str) -> bool:
         bracketChecker = deque()
 
@@ -19,13 +20,13 @@ class Solution:
                     bracketChecker.pop()
                 else:
                     return False
-                
+
         if len(bracketChecker) > 0:
             return False
         else:
             return True
-        
-        
+
+
 ''' much better way
 
 class Solution:
