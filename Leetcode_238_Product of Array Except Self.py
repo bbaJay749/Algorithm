@@ -32,6 +32,6 @@ class Solution:
             support_matrix = [num] * len(nums)
             support_matrix[idx] = 1
             result = np.multiply(result, support_matrix)
-            
+
         return result
 '''
