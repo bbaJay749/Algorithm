@@ -1,44 +1,30 @@
-from collections import deque
+from typing import Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 
 class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        dummyHead = ListNode()
+        newHead = dummyHead
 
-    def isValid(self, s: str) -> bool:
-        bracketChecker = deque()
-
-        for bracket in s:
-            if bracket in ['(', '{', '[']:
-                bracketChecker.append(bracket)
-            elif bracket in [')', '}', ']']:
-                if len(bracketChecker) == 0:
-                    return False
-                elif bracket == ')' and bracketChecker[-1] == '(':
-                    bracketChecker.pop()
-                elif bracket == '}' and bracketChecker[-1] == '{':
-                    bracketChecker.pop()
-                elif bracket == ']' and bracketChecker[-1] == '[':
-                    bracketChecker.pop()
-                else:
-                    return False
-
-        if len(bracketChecker) > 0:
-            return False
-        else:
-            return True
-
-
-''' much better way
-
-class Solution:
-    def isValid(self, s: str) -> bool:
-        map = {')':'(', '}':'{', ']':'['}
-        st = []
-        for c in s:
-            if len(st)==0 or not c in map.keys():
-                st.append(c)
-            elif map.get(c)==st[-1]:
-                st.pop()
+        while list1 and list2:
+            if list1.val < list2.val:
+                dummyHead.next = list1
+                list1 = list1.next
             else:
-                st.append(c)
-        return len(st)==0
-'''
+                dummyHead.next = list2
+                list2 = list2.next
+            dummyHead = dummyHead.next
+
+        if list1:
+            dummyHead.next = list1
+        if list2:
+            dummyHead.next = list2
+
+        return newHead.next
