@@ -19,7 +19,6 @@ class Solution:
             board[row_idx][col_idx] = word[0]
         return False
 
-
     def exist(self, board: List[List[str]], word: str) -> bool:
         for row_idx, line in enumerate(board):
             for col_idx, _ in enumerate(line):
